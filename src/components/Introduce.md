@@ -35,6 +35,21 @@
 
 <details>
   <summary>
+    <b>Day</b> - 自定义日期
+  </summary>
+  <section>
+    <img style="max-width: 320px;" src="https://kongfandong.cn/images/capture/Day.png">
+    <p>Clock的升级版，更强大的定义各种日期格式，使用Dayjs的
+      <a 
+        href="https://dayjs.gitee.io/docs/zh-CN/display/format#%E6%94%AF%E6%8C%81%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%8D%A0%E4%BD%8D%E7%AC%A6%E5%88%97%E8%A1%A8" target="_blank"
+        >formatter格式化占位符
+      </a>语法进行自定义。另外若最小单位是秒的，请更改组件刷新频率为1s。
+    </p>
+  </section>
+</details>
+
+<details>
+  <summary>
     <b>Verse</b> - 随机古诗
   </summary>
   <section>

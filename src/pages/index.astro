@@ -2,10 +2,16 @@
 // import Introduce from '../components/Introduce.astro';
 import Introduce from '../components/Introduce.md'
 
-let title = 'Howdz - 起始页';
-let description = 'Howdz-个性化的浏览器导航首页面板，支持自定义添加组件，可编辑组件各种属性。响应式设计，可自定义随机壁纸、动态壁纸等，目前已提供时钟、天气、搜索栏、TodoList、热搜等多种组件。'
-let keywords = 'Howdz,浏览器起始页,低代码,可视化编辑,自定义面板,Vue,Dashboard,Howdyjs,Leon.D'
-let author = 'Leon.D'
+const title = 'Howdz - 起始页';
+const description = 'Howdz-个性化的浏览器导航首页面板，支持自定义添加组件，可编辑组件各种属性。响应式设计，可自定义随机壁纸、动态壁纸等，目前已提供时钟、天气、搜索栏、TodoList、热搜等多种组件。'
+const keywords = 'Howdz,浏览器起始页,低代码,可视化编辑,自定义面板,Vue,Dashboard,Howdyjs,Leon.D'
+const author = 'Leon.D'
+
+const dashboardLink = 'https://s.kongfandong.cn/'
+const dashboardCrxLink = 'https://leon-kfd.github.io/Dashboard/howdy-dashboard.crx'
+const dashboardElectronLink = 'https://github.com/leon-kfd/Dashboard/releases/tag/v1.0.1-beta.1'
+
+const authorAboutLink = 'https://kongfandong.cn/blog/about'
 ---
 <html lang="zh-CN">
 <head>
@@ -35,12 +41,17 @@ let author = 'Leon.D'
             gap: 1em;
             max-width: min(100%, 68ch);
             margin: 0 auto;
+            .shield-wrapper {
+                img {
+                    margin: 0 5px;
+                }
+            }
         }
         .banner {
             width: 100%;
             text-align: center;
             .link-wrapper {
-                padding: 2em .6em .6em;
+                padding: 1em .6em .6em;
                 display: inline-flex;
                 align-items: center;
                 flex-wrap: wrap;
@@ -137,11 +148,22 @@ let author = 'Leon.D'
             <div class="container">
                 <div class="header-wrapper">
                     <img width="128" height="128" src="/assets/logo.png" alt="Astro logo">
-                    <h1>Welcome to <a href="https://s.kongfandong.cn/" target="_blank">Howdz</a></h1>
+                    <h1>Welcome to <a href={dashboardLink} target="_blank">Howdz</a></h1>
+                    <p class="shield-wrapper">
+                        <a href="https://github.com/leon-kfd/Dashboard" target="_blank">
+                            <img src="https://img.shields.io/github/stars/leon-kfd/Dashboard" alt="Star">
+                        </a>
+                        <a href="https://github.com/leon-kfd/Dashboard" target="_blank">
+                            <img src="https://img.shields.io/github/forks/leon-kfd/Dashboard?color=%23cc8844" alt="Fork">
+                        </a>
+                        <a href="https://github.com/leon-kfd/Dashboard/blob/main/LICENSE" target="_blank">
+                            <img src="https://img.shields.io/github/license/leon-kfd/Dashboard" alt="Licensee">
+                        </a>
+                    </p>
                 </div>
                 <div class="banner">
                     <div class="link-wrapper">
-                        <a href="https://s.kongfandong.cn/" target="_blank">
+                        <a href={dashboardLink} target="_blank">
                             <div class="btn-jump">
                                 <svg viewBox="0 0 1024 1024" width="30" height="30">
                                     <path d="M0 266.24l245.76 143.36L1024 184.32 450.56 552.96l286.72 348.16L1024 184.32z m327.68 532.48l-40.96-327.68 471.04-163.84-368.64 225.28z m81.92-225.28l-81.92 266.24 163.84-163.84z"></path>
@@ -151,10 +173,10 @@ let author = 'Leon.D'
                         </a>
                         <span class="division">or</span>
                         <div class="download-wrapper">
-                            <a href="https://leon-kfd.github.io/Dashboard/howdy-dashboard.crx">
+                            <a href={dashboardCrxLink}>
                                 <p style="margin-bottom: .4em">Download CRX (Chrome extension)</p>
                             </a>
-                            <a href="https://github.com/leon-kfd/Dashboard/releases/tag/v1.0.1-beta.1">
+                            <a href={dashboardElectronLink}>
                                 <p>Download Install Package (Electron)</p>
                             </a>
                         </div>
@@ -169,7 +191,7 @@ let author = 'Leon.D'
                 </section>
             </article>
             <footer>
-                <p style="margin-top:2rem;margin-bottom:0">© 2021 <a title="About me" href="https://kongfandong.cn/blog/about">Leon.D</a></p>
+                <p style="margin-top:2rem;margin-bottom:0">© 2021 <a title="About me" href={authorAboutLink}>{author}</a></p>
             </footer>
         </div>
     </main>
