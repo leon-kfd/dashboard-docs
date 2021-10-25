@@ -149,3 +149,29 @@
     <p>显示当天Github Trending列表，支持配置自动刷新</p>
   <section>
 </details>
+
+<details>
+  <summary>
+    <b>ZhihuList</b> - 知乎热榜
+  </summary>
+  <section>
+    <img style="max-width: 320px;" src="https://kongfandong.cn/images/capture/ZhihuList.png">
+    <p>显示当前知乎热榜，支持配置自动刷新</p>
+  <section>
+</details>
+
+<details>
+  <summary>
+    <b>Editor</b> - Markdown编辑器
+  </summary>
+  <section>
+    <img style="max-width: 320px;" src="https://kongfandong.cn/images/capture/Editor.png">
+    <p>基于<a href="https://milkdown.dev/#/zh-hans" target="_blank">Milkdown</a>实现，支持按需加载各种插件包括:
+      <li>Tooltip: 在选择文本后会在其上方出现工具栏可快速切换格式</li>
+      <li>Slash: 斜线命令，输入“/”后会弹出快速选择工具栏</li>
+      <li>Clipboard: 为编辑器添加复制粘贴Markdown格式功能</li>
+      <li>History: 增加历史记录功能，使用<code>Ctrl+Z</code>和<code>Ctrl+Y</code></li>
+      <li>Prism: 为代码块增加高亮功能</li>
+    </p>
+  <section>
+</details>
