@@ -145,11 +145,10 @@ article.introduce {
 }
 
 .color-text {
-  display: inline-flex;
   margin: 0 2px;
   background: linear-gradient(45deg, #7592f1, #e8a9eb);
   -webkit-background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 @media screen and (max-width: 420px) {
