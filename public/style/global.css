@@ -29,9 +29,13 @@ body {
 }
 
 .container {
-  display: grid;
+  /* display: grid;
   justify-content: center;
+  padding: 0 0.6rem; */
   padding: 0 0.6rem;
+  width: 100%;
+  max-width: 70ch;
+  margin: 0 auto;
 }
 
 /* @media (prefers-color-scheme: dark) {

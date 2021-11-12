@@ -1,4 +1,8 @@
-header {
+h2 {
+  margin-top: 1.4rem;
+}
+
+.home-page-header {
   background: #0e0e10;
   padding: 4rem 0 2rem;
   color: #f9f9f9;
@@ -23,6 +27,7 @@ header {
       padding: 1em 0 .6em;
       display: flex;
       align-items: center;
+      justify-content: center;
       flex-wrap: wrap;
       margin-bottom: .6em;
       a {
@@ -149,6 +154,31 @@ article.introduce {
   background: linear-gradient(45deg, #7592f1, #e8a9eb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.sub-page-nav-top {
+  padding-top: 3.2rem;
+}
+.sub-page-nav {
+  box-shadow: 0 0 10px #898989;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #fff;
+}
+.sub-page-header {
+  display: flex;
+  align-items: center;
+  height: 3.2rem;
+  color: #262626;
+  .title {
+    margin-left: .5rem;
+    margin-top: -0.24rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
 }
 
 @media screen and (max-width: 420px) {
