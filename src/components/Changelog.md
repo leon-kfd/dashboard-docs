@@ -1,8 +1,27 @@
 ## 🌈 更新日志
 
-### Prerelease
-#### Features
-- 添加全局JS注入配置
+### 1.1.2
+
+_2021-11-21_
+
+- `MovieLines`: 剧照壁纸判断屏幕宽显示不同Size
+- `MovieLines`: 修复定时器异常
+- `Popover`: 交互弹窗动画优化
+- 增加部分文本切换渐变动画
+
+---
+
+### 1.1.1
+
+_2021-11-17_
+
+- 增加三种主题预设
+- `Popover`交互弹窗增加`ScreenCenter`选项
+- `Popover`交互弹窗增加展示动画
+- `Editor`: 可配置 Logo 展示
+- `Weather`: 图标增加动态或静态切换
+- `MovieLines`: 增加可配置使用横屏的剧照壁纸
+- 添加全局 JS 注入配置
 
 ---
 
