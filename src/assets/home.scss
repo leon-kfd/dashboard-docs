@@ -121,12 +121,14 @@ article.introduce {
   }
   details {
       padding-inline-start: 1em;
+      padding-inline-end: 1em;
       summary {
           cursor: pointer;
           user-select: none;
       }
       section {
           padding-inline-start: 1em;
+          padding-inline-end: 1em;
       }
       img {
           box-shadow: 0 0 .2em #ccc;
