@@ -32,5 +32,23 @@ const authorAboutLink = 'https://kongfandong.cn/blog/about'
 </head>
 <body>
     <slot />
+    <script src="https://cdn.jsdelivr.net/npm/@howdyjs/img-zoom/dist/index.umd.js"></script>
+    <script>
+        const ImgZoom = HowdyImgZoom.default
+        const details = document.querySelectorAll('.control details');
+        Array.prototype.slice.call(details).map(el => {
+            const title = el.querySelector('summary').innerText || ''
+            const img = el.querySelector('img')
+            new ImgZoom({
+                el: img,
+                options: {
+                    title,
+                    group: 'summaryImg',
+                    zoomCursor: true,
+                    showCloseBtn: true,
+                }
+            })
+        })
+    </script>
 </body>
 </html>
