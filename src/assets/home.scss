@@ -15,139 +15,159 @@ h2 {
   max-width: min(100%, 68ch);
   margin: 0 auto;
   .shield-wrapper {
-      img {
-          margin: 0 5px;
-      }
+    img {
+      margin: 0 5px;
+    }
   }
 }
 .banner {
   width: 100%;
   text-align: center;
   .link-wrapper {
-      padding: 1em 0 .6em;
-      display: flex;
+    padding: 1em 0 0.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 0.6em;
+    a {
+      text-decoration: none;
+    }
+    .btn-jump {
+      margin: 0.6em;
+      position: relative;
+      padding: 0.8em 1em;
+      font-weight: 500;
+      font-size: 1em;
+      line-height: 1;
+      outline: none;
+      overflow: hidden;
+      cursor: pointer;
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: .6em;
-      a {
-          text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
+      -webkit-appearance: none;
+      text-decoration: none;
+      box-sizing: border-box;
+      user-select: none;
+      color: #fff;
+      border-radius: 6px;
+      background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+      box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+      transform: translate(0);
+      &:after {
+        content: "";
+        position: absolute;
+        margin: 4px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        background: #0e0e10;
+        border-radius: 6px;
       }
-      .btn-jump {
-          margin: .6em;
-          position: relative;
-          padding: .8em 1em;
-          font-weight: 500;
-          font-size: 1em;
-          line-height: 1;
-          outline: none;
-          overflow: hidden;
-          cursor: pointer;
-          display: inline-flex;
-          align-items: center;
-          white-space: nowrap;
-          cursor: pointer;
-          -webkit-appearance: none;
-          text-decoration: none;
-          box-sizing: border-box;
-          user-select: none;
-          color: #fff;
-          border-radius: 6px;
-          background-image: linear-gradient(45deg, #4568dc, #b06ab3);
-          box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
-          transform: translate(0);
-          &:after {
-              content: "";
-              position: absolute;
-              margin: 4px;
-              top: 0;
-              left: 0;
-              bottom: 0;
-              right: 0;
-              z-index: -1;
-              background: #0e0e10;
-              border-radius: 6px;
-          }
-          &:hover {
-              background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
-              box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
-          }
-          svg {
-            margin-right: 5px;
-            width: 22px;
-            height: 22px;
-          }
-          svg path {
-            fill: #fff;
-          }
+      &:hover {
+        background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+        box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
       }
-      .division {
-          font-size: .9em;
-          color: #9a9a9a;
-          margin: 0 1em;
+      svg {
+        margin-right: 5px;
+        width: 22px;
+        height: 22px;
       }
-      .download-wrapper {
-          font-size: .9em;
-          margin: .6em 0;
+      svg path {
+        fill: #fff;
       }
+    }
+    .division {
+      font-size: 0.9em;
+      color: #9a9a9a;
+      margin: 0 1em;
+    }
+    .download-wrapper {
+      font-size: 0.9em;
+      margin: 0.6em 0;
+    }
   }
   .other-link-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .link {
-          color: #898989;
-          font-size: .8em;
-          margin: 0 1em;
-      }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .link {
+      color: #898989;
+      font-size: 0.8em;
+      margin: 0 1em;
+    }
   }
 }
 article.introduce {
-  padding: .8em 0;
+  padding: 0.8em 0;
   line-height: 1.5;
   overflow: hidden;
   section.control {
-      margin-top: .8em;
-      display: flex;
-      flex-direction: column;
-      gap: 1em;
-      max-width: 70ch;
+    margin-top: 0.8em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 70ch;
   }
   ul {
-      padding-inline-start: 2em;
-      li {
-          margin-bottom: .2em;
-      }
+    padding-inline-start: 2em;
+    li {
+      margin-bottom: 0.2em;
+    }
   }
   details {
+    padding-inline-start: 1em;
+    padding-inline-end: 1em;
+    summary {
+      cursor: pointer;
+      user-select: none;
+      outline: none;
+      display: block;
+      padding-left: 1.2em;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.25em;
+        width: 1em;
+        height: 1em;
+        background: url('data:image/svg+xml;utf8,<svg height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M10 20l8-8-8-8-1.414 1.414L15.172 12l-6.586 6.586"></path></g></svg>')
+          no-repeat center;
+        background-size: 100%;
+      }
+    }
+    &:hover {
+      summary {
+      }
+    }
+    section {
       padding-inline-start: 1em;
       padding-inline-end: 1em;
-      summary {
-          cursor: pointer;
-          user-select: none;
-      }
-      section {
-          padding-inline-start: 1em;
-          padding-inline-end: 1em;
-      }
-      img {
-          box-shadow: 0 0 .2em #ccc;
-          margin: .5em;
-          max-width: 320px;
-          width: 100%;
-      }
-      p, li {
-          font-size: .85em;
-          color: #464646;
-      }
+    }
+    img {
+      box-shadow: 0 0 0.2em #ccc;
+      margin: 0.5em;
+      max-width: 320px;
+      width: 100%;
+    }
+    p,
+    li {
+      font-size: 0.85em;
+      color: #464646;
+    }
   }
   code {
-      font-family: inherit;
-      margin: 0 .1em;
-      padding: 0 .1em;
-      font-weight: bold;
-      border-radius: .2em;
-      background: #fdfae1;
+    font-family: inherit;
+    margin: 0 0.1em;
+    padding: 0 0.1em;
+    font-weight: bold;
+    border-radius: 0.2em;
+    background: #fdfae1;
   }
 }
 
@@ -176,7 +196,7 @@ article.introduce {
   height: 3.2rem;
   color: #262626;
   .title {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     margin-top: -0.24rem;
     font-size: 1.4rem;
     font-weight: bold;
