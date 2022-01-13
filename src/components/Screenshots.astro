@@ -1,0 +1,101 @@
+---
+import { Markdown } from 'astro/components';
+---
+
+<Markdown>
+## ⚡ 截图
+</Markdown>
+
+<div class="screenshots-box">
+  <div class="arrow-left-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"><path fill="none" d="M0 0h24v24H0z"/><path d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z"/></svg>
+  </div>
+  <div class="img-container">
+    <div class="img-wrapper">
+      <img class="img-slide" src="https://s2.loli.net/2022/01/13/CZe8gTiIVUlpvOt.png">
+      <!-- <img class="img-slide" loading="lazy" src="https://s2.loli.net/2022/01/13/RKSxi9rlBaG3hE5.png">
+      <img class="img-slide" loading="lazy" src="https://s2.loli.net/2022/01/13/eNxSAqcDLMHuCVJ.png">
+      <img class="img-slide" loading="lazy" src="https://s2.loli.net/2022/01/13/8EaLuqIxt3DYkM1.png">
+      <img class="img-slide" loading="lazy" src="https://s2.loli.net/2022/01/13/sZVmyqlnDEtCMj3.png"> -->
+    </div>
+  </div>
+  <div class="arrow-right-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"><path fill="none" d="M0 0h24v24H0z"/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"/></svg>
+  </div>
+</div>
+
+<script>
+  const leftBtn = document.querySelector('.arrow-left-btn')
+  const rightBtn = document.querySelector('.arrow-right-btn')
+  const img = document.querySelector('.img-slide')
+  leftBtn.addEventListener('click', handlePrev)
+  rightBtn.addEventListener('click', handleNext)
+  let activeIndex = 0
+  let leaveAnimation = null;
+  // const imgs = Array.prototype.slice.call(document.querySelectorAll('.img-slide'));
+
+  const imgLinks = [
+    'https://s2.loli.net/2022/01/13/CZe8gTiIVUlpvOt.png',
+    'https://s2.loli.net/2022/01/13/RKSxi9rlBaG3hE5.png',
+    'https://s2.loli.net/2022/01/13/eNxSAqcDLMHuCVJ.png',
+    'https://s2.loli.net/2022/01/13/8EaLuqIxt3DYkM1.png',
+    'https://s2.loli.net/2022/01/13/sZVmyqlnDEtCMj3.png'
+  ]
+
+  img.addEventListener("load", async () => {
+    img.style.opacity = 1;
+    if (leaveAnimation) leaveAnimation.cancel();
+    const changeAnimation = img.animate([
+      {
+        filter: "blur(20px)",
+        tarnsform: "scale(1,1)",
+      },
+      {
+        filter: "blur(0)",
+        tarnsform: "scale(1)",
+      },
+    ],400)
+    await changeAnimation.finished;
+    img.style.filter = "blur(0)";
+  });
+
+  function handlePrev() {
+    if (activeIndex === 0) {
+      activeIndex = imgLinks.length -1
+    } else {
+      activeIndex--
+    }
+    show()
+  }
+
+  function handleNext() {
+    if (activeIndex === imgLinks.length -1) {
+      activeIndex = 0
+    } else {
+      activeIndex++
+    }
+    show()
+  }
+
+  async function show() {
+    img.src = imgLinks[activeIndex]
+    try {
+      leaveAnimation = img.animate([
+        {
+          filter: "blur(20px)",
+          tarnsform: "scale(1,1)",
+        },
+        {
+          filter: "blur(60px)",
+        },
+      ], 400);
+      await leaveAnimation.finished;
+      img.style.filter = "blur(60px)";
+    } catch {
+      // cancel
+      console.log("cancel");
+    }
+  }
+  
+  show()
+</script>
