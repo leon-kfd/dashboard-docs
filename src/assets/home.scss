@@ -129,6 +129,9 @@ article.introduce {
       display: block;
       padding-left: 1.2em;
       position: relative;
+      &::-webkit-details-marker {
+        display: none;
+      }
       &::before {
         content: "";
         position: absolute;
@@ -165,8 +168,9 @@ article.introduce {
     img {
       box-shadow: 0 0 0.2em #ccc;
       margin: 0.5em;
-      max-width: 400px;
-      width: 100%;
+      width: 400px;
+      height: 320px;
+      background: #3f344d;
     }
     p,
     li {
@@ -227,6 +231,14 @@ article.introduce {
           margin-bottom: 5px;
           margin-right: 0;
         }
+      }
+    }
+  }
+  article.introduce {
+    details {
+      img {
+        width: 100%;
+        height: auto;
       }
     }
   }
