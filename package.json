@@ -3,12 +3,18 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
+    "dev": "cross-env VITE_BASE=/howdz astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "cross-env VITE_BASE= astro build",
+    "build:base": "cross-env VITE_BASE=/howdz astro build",
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^0.20.9"
+    "astro": "^1.1.1",
+    "cross-env": "^7.0.3",
+    "sass": "^1.51.0"
+  },
+  "dependencies": {
+    "@howdyjs/img-zoom": "^2.0.0"
   }
 }

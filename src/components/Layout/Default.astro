@@ -1,54 +1,62 @@
 ---
-import '../../assets/home.scss'
+import "../../assets/home.scss";
 
-const title = 'Howdz - 起始页';
-const description = 'Howdz-个性化的浏览器导航首页面板，支持自定义添加组件，可编辑组件各种属性。响应式设计，可自定义随机壁纸、动态壁纸等，目前已提供时钟、天气、搜索栏、TodoList、热搜等多种组件。'
-const keywords = 'Howdz,浏览器起始页,低代码,可视化编辑,自定义面板,Vue,Dashboard,Howdyjs,Leon.D'
-const author = 'Leon.D'
+const title = "Howdz - 起始页";
+const description =
+    "Howdz-个性化的浏览器导航首页面板，支持自定义添加组件，可编辑组件各种属性。响应式设计，可自定义随机壁纸、动态壁纸等，目前已提供时钟、天气、搜索栏、TodoList、热搜等多种组件。";
+const keywords =
+    "Howdz,浏览器起始页,低代码,可视化编辑,自定义面板,Vue,Dashboard,Howdyjs,Leon.D";
+const author = "Leon.D";
 
-const dashboardLink = 'https://s.kongfandong.cn/'
-const chromeInstall = 'https://chrome.google.com/webstore/detail/howdz%E8%B5%B7%E5%A7%8B%E9%A1%B5/ggglfehkglgpenacfalffmiojghklamm/related'
-const edgeInstall = 'https://microsoftedge.microsoft.com/addons/detail/howdz%E8%B5%B7%E5%A7%8B%E9%A1%B5/cgcggcdgjfmeoemmdpleinicgepijegd'
-const dashboardCrxLink = 'https://leon-kfd.github.io/Dashboard/howdz-dashboard.zip'
-const dashboardElectronLink = 'https://github.com/leon-kfd/Dashboard/releases/tag/v1.0.1-beta.2'
+const dashboardLink = "https://s.kongfandong.cn/";
+const chromeInstall =
+    "https://chrome.google.com/webstore/detail/howdz%E8%B5%B7%E5%A7%8B%E9%A1%B5/ggglfehkglgpenacfalffmiojghklamm/related";
+const edgeInstall =
+    "https://microsoftedge.microsoft.com/addons/detail/howdz%E8%B5%B7%E5%A7%8B%E9%A1%B5/cgcggcdgjfmeoemmdpleinicgepijegd";
+const dashboardCrxLink =
+    "https://leon-kfd.github.io/Dashboard/howdz-dashboard.zip";
+const dashboardElectronLink =
+    "https://github.com/leon-kfd/Dashboard/releases/tag/v1.0.1-beta.2";
 
-const authorAboutLink = 'https://kongfandong.cn/blog/about'
+const authorAboutLink = "https://kongfandong.cn/blog/about";
 ---
+
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website"/>
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:creator" content={author}/>
-    <meta name="twitter:title" content={title}/>
-    <meta name="twitter:description" content={description} />
-    <meta name="keywords" content={keywords} />
-    <title>{title}</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="/style/global.css">
-</head>
-<body>
-    <slot />
-    <script src="https://cdn.jsdelivr.net/npm/@howdyjs/img-zoom/dist/index.umd.js"></script>
-    <script>
-        const ImgZoom = HowdyImgZoom.default
-        const details = document.querySelectorAll('.control details');
-        Array.prototype.slice.call(details).map(el => {
-            const title = el.querySelector('summary').innerText || ''
-            const img = el.querySelector('img')
-            new ImgZoom({
-                el: img,
-                options: {
-                    title,
-                    group: 'summaryImg',
-                    zoomCursor: true,
-                    showCloseBtn: true,
-                }
-            })
-        })
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content={author} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <title>{title}</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/style/global.css" />
+    </head>
+    <body>
+        <slot />
+    </body>
 </html>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/@howdyjs/img-zoom/dist/index.umd.js"></script>
+<script is:inline>
+const ImgZoom = HowdyImgZoom.default
+const details = document.querySelectorAll(".control details");
+Array.prototype.slice.call(details).map((el) => {
+    const title = el.querySelector("summary").innerText || "";
+    const img = el.querySelector("img");
+    new ImgZoom({
+        el: img,
+        options: {
+            title,
+            group: "summaryImg",
+            zoomCursor: true,
+            showCloseBtn: true,
+        },
+    });
+});
+</script>
