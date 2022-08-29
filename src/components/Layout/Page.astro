@@ -1,5 +1,8 @@
 ---
 import Default from './Default.astro'
+
+const base = import.meta.env.VITE_BASE
+
 const author = 'Leon.D'
 const authorAboutLink = 'https://kongfandong.cn/blog/about'
 ---
@@ -9,7 +12,7 @@ const authorAboutLink = 'https://kongfandong.cn/blog/about'
             <div class="container">
                 <header class="sub-page-header">
                     <a href="/">
-                        <img width="36" height="36" src="/assets/logo.png" alt="Astro logo">
+                        <img width="36" height="36" src={`${base}/assets/logo.png`} alt="logo">
                     </a>
                     <a href="/">
                         <div class="title">Howdz</div>
