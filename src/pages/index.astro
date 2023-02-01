@@ -1,99 +1,133 @@
 ---
-import Default from '../components/Layout/Default.astro'
-import Introduce from '../components/Introduce.md'
-import Material from '../components/Material.md'
-import More from '../components/More.astro'
-import Screenshots from '../components/Screenshots.astro'
+import Default from "../components/Layout/Default.astro";
+import Introduce from "../components/Introduce.md";
+import Material from "../components/Material.md";
+import More from "../components/More.astro";
+import Screenshots from "../components/Screenshots.astro";
 
-const base = import.meta.env.VITE_BASE
+const base = import.meta.env.VITE_BASE;
 
-const dashboardLink = 'https://s.kongfandong.cn/'
-const chromeInstall = 'https://chrome.google.com/webstore/detail/howdz%E8%B5%B7%E5%A7%8B%E9%A1%B5/ggglfehkglgpenacfalffmiojghklamm/related'
-const edgeInstall = 'https://microsoftedge.microsoft.com/addons/detail/howdz%E8%B5%B7%E5%A7%8B%E9%A1%B5/cgcggcdgjfmeoemmdpleinicgepijegd'
-const dashboardCrxLink = 'https://leon-kfd.github.io/Dashboard/howdz-dashboard.zip'
-const dashboardElectronLink = 'https://github.com/leon-kfd/Dashboard/releases/tag/v1.0.1-beta.2'
+const dashboardLink = "https://s.kongfandong.cn/";
+const chromeInstall =
+  "https://chrome.google.com/webstore/detail/howdz%E8%B5%B7%E5%A7%8B%E9%A1%B5/ggglfehkglgpenacfalffmiojghklamm/related";
+const edgeInstall =
+  "https://microsoftedge.microsoft.com/addons/detail/howdz%E8%B5%B7%E5%A7%8B%E9%A1%B5/cgcggcdgjfmeoemmdpleinicgepijegd";
+const dashboardCrxLink =
+  "https://leon-kfd.github.io/Dashboard/howdz-dashboard.zip";
+const dashboardElectronLink = "https://cdn.kongfandong.cn/Howdz.msi";
 
-const author = 'Leon.D'
-const authorAboutLink = 'https://kongfandong.cn/blog/about'
+const author = "Leon.D";
+const authorAboutLink = "https://kongfandong.cn/blog/about";
 ---
+
 <Default>
-    <main>
-        <header class="home-page-header">
-            <div class="container">
-                <div class="header-wrapper">
-                    <img width="128" height="128" src={`${base}/assets/logo.png`} alt="logo">
-                    <h1 style="font-size: 3em"><a href={dashboardLink} target="_blank">Howdz</a></h1>
-                    <h3 style="margin: .8em 0;">一个完全<span class="color-text">自定义配置</span>的浏览器<span
-                            class="color-text">起始页</span></h3>
-                    <p class="shield-wrapper">
-                        <a href="https://github.com/leon-kfd/Dashboard" target="_blank">
-                            <img src="https://img.shields.io/github/stars/leon-kfd/Dashboard" alt="Star">
-                        </a>
-                        <a href="https://github.com/leon-kfd/Dashboard" target="_blank">
-                            <img src="https://img.shields.io/github/forks/leon-kfd/Dashboard?color=%23cc8844"
-                                alt="Fork">
-                        </a>
-                        <a href="https://github.com/leon-kfd/Dashboard/blob/main/LICENSE" target="_blank">
-                            <img src="https://img.shields.io/github/license/leon-kfd/Dashboard" alt="Licensee">
-                        </a>
-                        <img style="display: none"
-                            src="https://visitor-badge.glitch.me/badge?page_id=howdz.vercel.app&right_color=red"
-                            alt="Visit">
-                    </p>
-                </div>
-                <div class="banner">
-                    <div class="link-wrapper">
-                        <a href={dashboardLink} target="_blank">
-                            <div class="btn-jump">
-                                <svg viewBox="0 0 1024 1024">
-                                    <path
-                                        d="M0 266.24l245.76 143.36L1024 184.32 450.56 552.96l286.72 348.16L1024 184.32z m327.68 532.48l-40.96-327.68 471.04-163.84-368.64 225.28z m81.92-225.28l-81.92 266.24 163.84-163.84z">
-                                    </path>
-                                </svg>
-                                <div class="text">网页在线版</div>
-                            </div>
-                        </a>
-                        <a href={chromeInstall} target="_blank">
-                            <div class="btn-jump">
-                                <svg viewBox="0 0 1024 1024">
-                                    <path
-                                        d="M928 512.3v-0.3c0-229.8-186.2-416-416-416S96 282.2 96 512v0.4c0 229.8 186.2 416 416 416s416-186.2 416-416v-0.3 0.2z m-6.7-74.6l0.6 3.3c0.4 2.4 0.8 4.8 1.2 7.1-0.4-2.4-0.8-4.8-1.2-7.1l-0.6-3.3c-0.2-1-0.4-2-0.6-3.1 0.2 1.1 0.4 2.1 0.6 3.1zM676.7 638.2c53.5-82.2 52.5-189.4-11.1-263.7l162.4-8.4c20.5 44.4 32 93.8 32 145.9 0 185.2-144.6 336.6-327.1 347.4l143.8-221.2zM512 652.3c-77.5 0-140.2-62.7-140.2-140.2 0-77.7 62.7-140.2 140.2-140.2S652.2 434.5 652.2 512 589.5 652.3 512 652.3z m369.2-331.7l-3-5.7 3 5.7zM512 164c121.3 0 228.2 62.1 290.4 156.2l-263.6-13.9c-97.5-5.7-190.2 49.2-222.3 141.1L227.8 311c63.1-88.9 166.9-147 284.2-147zM102.5 585.8c26 145 127.1 264 261.6 315.1C229.6 850 128.5 731 102.5 585.8zM164 512c0-55.9 13.2-108.7 36.6-155.5l119.7 235.4c44.1 86.7 137.4 139.7 234 121.6l-74 145.1C302.9 842.5 164 693.5 164 512z m324.7 415.4c4 0.2 8 0.4 12 0.5-4-0.2-8-0.3-12-0.5z">
-                                    </path>
-                                </svg>
-                                <div class="text">Chrome插件</div>
-                            </div>
-                        </a>
-                        <a href={edgeInstall} target="_blank">
-                            <div class="btn-jump">
-                                <svg viewBox="0 0 1024 1024">
-                                    <path
-                                        d="M341.632 597.376A194.517333 194.517333 0 0 0 341.333333 608C341.333333 709.632 416.128 810.666667 554.666667 810.666667c101.248 0 193.194667-27.946667 256-66.261334v142.933334C734.336 920.064 644.821333 938.666667 554.666667 938.666667c-234.752 0-341.333333-148.053333-341.333334-330.666667 0-137.856 87.082667-256 210.901334-305.664C364.330667 369.621333 341.333333 441.216 341.333333 469.162667L768 469.333333c0-145.322667-108.714667-256-256-256-213.333333 0-341.376 170.154667-384 255.957334C140.373333 266.112 299.093333 85.333333 512 85.333333c221.866667 0 384 171.946667 384 384v128H341.333333l0.298667 0.042667z">
-                                    </path>
-                                </svg>
-                                <div class="text">Edge插件</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="other-link-wrapper">
-                        <a class="link" href={dashboardCrxLink} target="_blank">Download CRX ZIP</a>
-                        <a class="link" href={dashboardElectronLink} target="_blank">Download Install package</a>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <div class="container">
-            <article class="introduce">
-                <section class="control">
-                    <Introduce />
-                    <Material />
-                    <Screenshots />
-                    <More />
-                </section>
-            </article>
-            <footer>
-                <p style="margin-top:2rem;margin-bottom:0">© 2022 <a title="About me"
-                        href={authorAboutLink}>{author}</a></p>
-            </footer>
+  <main>
+    <header class="home-page-header">
+      <div class="container">
+        <div class="header-wrapper">
+          <img
+            width="128"
+            height="128"
+            src={`${base}/assets/logo.png`}
+            alt="logo"
+          />
+          <h1 style="font-size: 3em">
+            <a href={dashboardLink} target="_blank">Howdz</a>
+          </h1>
+          <h3 style="margin: .8em 0;">
+            一个完全<span class="color-text">自定义配置</span>的浏览器<span
+              class="color-text">起始页</span>
+          </h3>
+          <p class="shield-wrapper">
+            <a href="https://github.com/leon-kfd/Dashboard" target="_blank">
+              <img
+                src="https://img.shields.io/github/stars/leon-kfd/Dashboard"
+                alt="Star"
+              />
+            </a>
+            <a href="https://github.com/leon-kfd/Dashboard" target="_blank">
+              <img
+                src="https://img.shields.io/github/forks/leon-kfd/Dashboard?color=%23cc8844"
+                alt="Fork"
+              />
+            </a>
+            <a
+              href="https://github.com/leon-kfd/Dashboard/blob/main/LICENSE"
+              target="_blank"
+            >
+              <img
+                src="https://img.shields.io/github/license/leon-kfd/Dashboard"
+                alt="Licensee"
+              />
+            </a>
+            <img
+              style="display: none"
+              src="https://visitor-badge.glitch.me/badge?page_id=howdz.vercel.app&right_color=red"
+              alt="Visit"
+            />
+          </p>
         </div>
-    </main>
+        <div class="banner">
+          <div class="link-wrapper">
+            <a href={dashboardLink} target="_blank">
+              <div class="btn-jump">
+                <svg viewBox="0 0 1024 1024">
+                  <path
+                    d="M0 266.24l245.76 143.36L1024 184.32 450.56 552.96l286.72 348.16L1024 184.32z m327.68 532.48l-40.96-327.68 471.04-163.84-368.64 225.28z m81.92-225.28l-81.92 266.24 163.84-163.84z"
+                  >
+                  </path>
+                </svg>
+                <div class="text">网页在线版</div>
+              </div>
+            </a>
+            <a href={chromeInstall} target="_blank">
+              <div class="btn-jump">
+                <svg viewBox="0 0 1024 1024">
+                  <path
+                    d="M928 512.3v-0.3c0-229.8-186.2-416-416-416S96 282.2 96 512v0.4c0 229.8 186.2 416 416 416s416-186.2 416-416v-0.3 0.2z m-6.7-74.6l0.6 3.3c0.4 2.4 0.8 4.8 1.2 7.1-0.4-2.4-0.8-4.8-1.2-7.1l-0.6-3.3c-0.2-1-0.4-2-0.6-3.1 0.2 1.1 0.4 2.1 0.6 3.1zM676.7 638.2c53.5-82.2 52.5-189.4-11.1-263.7l162.4-8.4c20.5 44.4 32 93.8 32 145.9 0 185.2-144.6 336.6-327.1 347.4l143.8-221.2zM512 652.3c-77.5 0-140.2-62.7-140.2-140.2 0-77.7 62.7-140.2 140.2-140.2S652.2 434.5 652.2 512 589.5 652.3 512 652.3z m369.2-331.7l-3-5.7 3 5.7zM512 164c121.3 0 228.2 62.1 290.4 156.2l-263.6-13.9c-97.5-5.7-190.2 49.2-222.3 141.1L227.8 311c63.1-88.9 166.9-147 284.2-147zM102.5 585.8c26 145 127.1 264 261.6 315.1C229.6 850 128.5 731 102.5 585.8zM164 512c0-55.9 13.2-108.7 36.6-155.5l119.7 235.4c44.1 86.7 137.4 139.7 234 121.6l-74 145.1C302.9 842.5 164 693.5 164 512z m324.7 415.4c4 0.2 8 0.4 12 0.5-4-0.2-8-0.3-12-0.5z"
+                  >
+                  </path>
+                </svg>
+                <div class="text">Chrome插件</div>
+              </div>
+            </a>
+            <a href={edgeInstall} target="_blank">
+              <div class="btn-jump">
+                <svg viewBox="0 0 1024 1024">
+                  <path
+                    d="M341.632 597.376A194.517333 194.517333 0 0 0 341.333333 608C341.333333 709.632 416.128 810.666667 554.666667 810.666667c101.248 0 193.194667-27.946667 256-66.261334v142.933334C734.336 920.064 644.821333 938.666667 554.666667 938.666667c-234.752 0-341.333333-148.053333-341.333334-330.666667 0-137.856 87.082667-256 210.901334-305.664C364.330667 369.621333 341.333333 441.216 341.333333 469.162667L768 469.333333c0-145.322667-108.714667-256-256-256-213.333333 0-341.376 170.154667-384 255.957334C140.373333 266.112 299.093333 85.333333 512 85.333333c221.866667 0 384 171.946667 384 384v128H341.333333l0.298667 0.042667z"
+                  >
+                  </path>
+                </svg>
+                <div class="text">Edge插件</div>
+              </div>
+            </a>
+          </div>
+          <div class="other-link-wrapper">
+            <a class="link" href={dashboardCrxLink} target="_blank"
+              >Download CRX ZIP</a
+            >
+            <a class="link" href={dashboardElectronLink} target="_blank"
+              >Download Install package</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <article class="introduce">
+        <section class="control">
+          <Introduce />
+          <Material />
+          <Screenshots />
+          <More />
+        </section>
+      </article>
+      <footer>
+        <p style="margin-top:2rem;margin-bottom:0">
+          © 2022 <a title="About me" href={authorAboutLink}>{author}</a>
+        </p>
+      </footer>
+    </div>
+  </main>
 </Default>
