@@ -1,3 +1,12 @@
+---
+const screenShotList = [
+  "https://cdn.kongfandong.cn/howdz-screenshot/screen_shot01.png?imageView2/2/w/1080",
+  "https://cdn.kongfandong.cn/howdz-screenshot/screen_shot02.png?imageView2/2/w/1080",
+  "https://cdn.kongfandong.cn/howdz-screenshot/screen_shot03.png?imageView2/2/w/1080",
+  "https://cdn.kongfandong.cn/howdz-screenshot/screen_shot04.png?imageView2/2/w/1080",
+  "https://cdn.kongfandong.cn/howdz-screenshot/screen_shot05.png?imageView2/2/w/1080"
+]
+---
 <h2>⚡ 截图</h2>
 
 <div class="screenshots-box">
@@ -14,10 +23,13 @@
   </div>
   <div class="img-container">
     <div class="img-wrapper">
-      <img
-        class="img-slide"
-        src="https://cdn.kongfandong.cn/howdz-screenshot/screen_shot01.png?imageView2/2/w/1080"
-      />
+      {
+        screenShotList.map(item => {
+          return (
+            <img class="img-slide" data-src={item} style="display: none"/>
+          )
+        })
+      }
     </div>
   </div>
   <div class="arrow-right-btn">
@@ -36,44 +48,16 @@
 <script>
   const leftBtn = document.querySelector(".arrow-left-btn");
   const rightBtn = document.querySelector(".arrow-right-btn");
-  const img = document.querySelector(".img-slide");
+  // const img = document.querySelectorAll(".img-slide");
   leftBtn.addEventListener("click", handlePrev);
   rightBtn.addEventListener("click", handleNext);
   let activeIndex = 0;
   let leaveAnimation = null;
-  // const imgs = Array.prototype.slice.call(document.querySelectorAll('.img-slide'));
-
-  const imgLinks = [
-    "https://cdn.kongfandong.cn/howdz-screenshot/screen_shot01.png?imageView2/2/w/1080",
-    "https://cdn.kongfandong.cn/howdz-screenshot/screen_shot02.png?imageView2/2/w/1080",
-    "https://cdn.kongfandong.cn/howdz-screenshot/screen_shot03.png?imageView2/2/w/1080",
-    "https://cdn.kongfandong.cn/howdz-screenshot/screen_shot04.png?imageView2/2/w/1080",
-    "https://cdn.kongfandong.cn/howdz-screenshot/screen_shot05.png?imageView2/2/w/1080",
-  ];
-
-  img.addEventListener("load", async () => {
-    img.style.opacity = 1;
-    if (leaveAnimation) leaveAnimation.cancel();
-    const changeAnimation = img.animate(
-      [
-        {
-          filter: "blur(20px)",
-          tarnsform: "scale(1,1)",
-        },
-        {
-          filter: "blur(0)",
-          tarnsform: "scale(1)",
-        },
-      ],
-      400
-    );
-    await changeAnimation.finished;
-    img.style.filter = "blur(0)";
-  });
+  const imgs = Array.prototype.slice.call(document.querySelectorAll('.img-slide'));
 
   function handlePrev() {
     if (activeIndex === 0) {
-      activeIndex = imgLinks.length - 1;
+      activeIndex = imgs.length - 1;
     } else {
       activeIndex--;
     }
@@ -81,7 +65,7 @@
   }
 
   function handleNext() {
-    if (activeIndex === imgLinks.length - 1) {
+    if (activeIndex === imgs.length - 1) {
       activeIndex = 0;
     } else {
       activeIndex++;
@@ -90,7 +74,16 @@
   }
 
   async function show() {
-    img.src = imgLinks[activeIndex];
+    imgs.map((img, idx) => {
+      if (idx === activeIndex) {
+        img.style.display = "block";
+        img.src = img.dataset.src
+      } else {
+        img.style.display = "none";
+        img.src = ''
+      }
+    })
+    const img = imgs[activeIndex]
     try {
       leaveAnimation = img.animate(
         [
@@ -113,4 +106,39 @@
   }
 
   show();
+
+  const ImgZoom = HowdyImgZoom.default
+  imgs.map(img => {
+    img.addEventListener("load", async () => {
+      img.style.opacity = 1;
+      if (leaveAnimation) leaveAnimation.cancel();
+      const changeAnimation = img.animate(
+        [
+          {
+            filter: "blur(20px)",
+            tarnsform: "scale(1,1)",
+          },
+          {
+            filter: "blur(0)",
+            tarnsform: "scale(1)",
+          },
+        ],
+        400
+      );
+      await changeAnimation.finished;
+      img.style.filter = "blur(0)";
+    });
+
+    const title = `Screen Shot #${activeIndex + 1}`
+    new ImgZoom({
+      el: img,
+      options: {
+        title,
+        imgSrc: img.dataset.src,
+        group: "ScreenShot",
+        zoomCursor: true,
+        showCloseBtn: true,
+      }
+    });
+  })
 </script>
