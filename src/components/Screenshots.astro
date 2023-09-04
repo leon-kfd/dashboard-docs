@@ -108,7 +108,7 @@ const screenShotList = [
   show();
 
   const ImgZoom = HowdyImgZoom.default
-  imgs.map(img => {
+  imgs.map((img, idx) => {
     img.addEventListener("load", async () => {
       img.style.opacity = 1;
       if (leaveAnimation) leaveAnimation.cancel();
@@ -129,7 +129,7 @@ const screenShotList = [
       img.style.filter = "blur(0)";
     });
 
-    const title = `Screen Shot #${activeIndex + 1}`
+    const title = `Screen Shot #${idx + 1}`
     new ImgZoom({
       el: img,
       options: {
