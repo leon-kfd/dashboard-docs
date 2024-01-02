@@ -2,7 +2,7 @@
 
 ### Prerelease
 
-- 新增[预览模式](https://doc.howdzy.xyz/FAQ#什么是预览模式?): 非持久性存储的预览模式
+- 新增[预览模式](https://doc.howdz.xyz/FAQ#%E4%BB%80%E4%B9%88%E6%98%AF%E9%A2%84%E8%A7%88%E6%A8%A1%E5%BC%8F:~:text=%E3%80%82-,%E4%BB%80%E4%B9%88%E6%98%AF%E9%A2%84%E8%A7%88%E6%A8%A1%E5%BC%8F,-%3F): 非持久性存储的预览模式
 
 ---
 
