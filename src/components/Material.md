@@ -28,7 +28,7 @@
     <img src="https://cdn.kongfandong.cn/howdz-material/Day.png" loading="lazy">
     <p>Clock的升级版，更强大的定义各种日期格式，使用Dayjs的
       <a 
-        href="https://dayjs.gitee.io/docs/zh-CN/display/format#%E6%94%AF%E6%8C%81%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%8D%A0%E4%BD%8D%E7%AC%A6%E5%88%97%E8%A1%A8" target="_blank"
+        href="https://day.js.org/docs/zh-CN/display/format" target="_blank"
         >formatter格式化占位符
       </a>语法进行自定义。另外若最小单位是秒的，请更改组件刷新频率为1s。
     </p>
@@ -109,46 +109,6 @@
 
 <details>
   <summary>
-    <b>JuejinList</b> - 掘金热门
-  </summary>
-  <section>
-    <img src="https://cdn.kongfandong.cn/howdz-material/JuejinList.png" loading="lazy">
-    <p>显示最新热门列表，支持配置自动刷新</p>
-  <section>
-</details>
-
-<details>
-  <summary>
-    <b>WeiboList</b> - 微博热搜
-  </summary>
-  <section>
-    <img src="https://cdn.kongfandong.cn/howdz-material/WeiboList.png" loading="lazy">
-    <p>显示最新微博热搜列表，支持配置自动刷新</p>
-  <section>
-</details>
-
-<details>
-  <summary>
-    <b>GithubTrending</b> - Github 趋势
-  </summary>
-  <section>
-    <img src="https://cdn.kongfandong.cn/howdz-material/GithubTrending.png" loading="lazy">
-    <p>显示当天Github Trending列表，支持配置自动刷新</p>
-  <section>
-</details>
-
-<details>
-  <summary>
-    <b>ZhihuList</b> - 知乎热榜
-  </summary>
-  <section>
-    <img src="https://cdn.kongfandong.cn/howdz-material/ZhihuList.png" loading="lazy">
-    <p>显示当前知乎热榜，支持配置自动刷新</p>
-  <section>
-</details>
-
-<details>
-  <summary>
     <b>Editor</b> - Markdown编辑器
   </summary>
   <section>
@@ -184,5 +144,55 @@
       <li>图标样式、大小、背景色都可自定义，图标可缓存为Base64</li>
       <li>支持从Chrome内核的浏览器导出的书签HTML文件导入</li>
     </p>
+  <section>
+</details>
+
+<details>
+  <summary>
+    <b>DailyHot</b> - 今日热榜
+  </summary>
+  <section>
+    <img src="https://cdn.kongfandong.cn/howdz-material/DailyHot.png" loading="lazy">
+    <p>聚合类热门榜单， API服务基于<a href="https://github.com/imsyy/DailyHotApi" target="_blank">DailyHotApi</a></p>
+  <section>
+</details>
+
+<details>
+  <summary>
+    <b>JuejinList</b> - 掘金热门
+  </summary>
+  <section>
+    <img src="https://cdn.kongfandong.cn/howdz-material/JuejinList.png" loading="lazy">
+    <p>显示最新热门列表，支持配置自动刷新</p>
+  <section>
+</details>
+
+<details>
+  <summary>
+    <b>WeiboList</b> - 微博热搜
+  </summary>
+  <section>
+    <img src="https://cdn.kongfandong.cn/howdz-material/WeiboList.png" loading="lazy">
+    <p>显示最新微博热搜列表，支持配置自动刷新</p>
+  <section>
+</details>
+
+<details>
+  <summary>
+    <b>GithubTrending</b> - Github 趋势
+  </summary>
+  <section>
+    <img src="https://cdn.kongfandong.cn/howdz-material/GithubTrending.png" loading="lazy">
+    <p>显示当天Github Trending列表，支持配置自动刷新</p>
+  <section>
+</details>
+
+<details>
+  <summary>
+    <b>ZhihuList</b> - 知乎热榜
+  </summary>
+  <section>
+    <img src="https://cdn.kongfandong.cn/howdz-material/ZhihuList.png" loading="lazy">
+    <p>显示当前知乎热榜，支持配置自动刷新</p>
   <section>
 </details>
